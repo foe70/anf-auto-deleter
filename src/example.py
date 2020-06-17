@@ -24,10 +24,10 @@ from sample_utils import console_output, print_header, resource_exists
 
 SHOULD_CLEANUP = False
 LOCATION = 'eastus'
-RESOURCE_GROUP_NAME = 'anf01-rg'
-VNET_NAME = 'vnet-01'
-SUBNET_NAME = 'anf-sn'
-VNET_RESOURCE_GROUP_NAME = 'anf01-rg'
+RESOURCE_GROUP_NAME = 'ANF-RG'
+VNET_NAME = 'ANF-VNET'
+SUBNET_NAME = 'anf-subnet'
+VNET_RESOURCE_GROUP_NAME = 'ANF-VNET-RG'
 ANF_ACCOUNT_NAME = Haikunator().haikunate(delimiter='')
 CAPACITYPOOL_NAME = "Pool01"
 CAPACITYPOOL_SERVICE_LEVEL = "Standard"
