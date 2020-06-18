@@ -1,6 +1,6 @@
 # Purpose of this script
 
-Delete all of your capacity pool which you created for test puroose, in case you want to delete them all for saving money :D
+Delete all of your capacity pools which you created for test purpose, in case you want to delete them all for saving money :D
 
 
 # How to run the script
