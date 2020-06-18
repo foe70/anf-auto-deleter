@@ -37,7 +37,6 @@ def List_ANF_account(anf_client, rg_id):
         acname.append(re.name)
     return acname    
 
-
 # get pool id list 
 
 def List_ANF_pool_id(anf_client,resource_group_name,account_name_list):
