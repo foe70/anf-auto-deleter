@@ -10,13 +10,21 @@ from azure.mgmt.netapp.models import NetAppAccount, \
 from azure.mgmt.resource import ResourceManagementClient
 from msrestazure.azure_exceptions import CloudError
 from sample_utils import console_output, print_header, resource_exists
+import configparser
 
-SHOULD_CLEANUP = False
-LOCATION = 'eastus'
 RESOURCE_GROUP_NAME = 'ANF-RG'
 acname = []
 poid = []
 void = []
+conf= configparser.ConfigParser()
+
+def readConf():
+    '''读取配置文件'''
+    root_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    conf.read(root_path + '/conf/config.conf')  # 文件路径
+    name = conf.get("resource_group", "name")  # 获取指定section 的option值
+    console_output("Resource group: {} ".format(name))
+    return name
 
 # get anf account name list
 
@@ -48,6 +56,10 @@ def List_ANF_vol_id(anf_client,resource_group_name,pool_id_list):
     return void
 
 def run_deleter():
+    
+    conf= configparser.ConfigParser()
+    
+    RESOURCE_GROUP_NAME = readConf()
     
     # get client and credential
 

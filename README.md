@@ -18,14 +18,11 @@ products:
     pip install -r ./requirements.txt
     ```
 4. Make sure you have the azureauth.json and its environment variable with the path to it defined (as previously described at [prerequisites](https://docs.microsoft.com/en-us/samples/azure-samples/netappfiles-python-sdk-sample/azure-netappfiles-sdk-sample-for-python/))
-5. Edit file **deleter.py** and change the variables contents as appropriate (names are self-explanatory).
+5. Edit configuration file **.\anf-auto-deleter\conf** and change the variables contents as appropriate.
 6. Run the script
     ```powershell
     python ./deleter.py
     ```
-
-Sample output
-![e2e execution](./media/e2e-Python.png)
 
 # References
 
