@@ -17,7 +17,7 @@ products:
     ```bash
     pip install -r ./requirements.txt
     ```
-4. Make sure you have the azureauth.json and its environment variable with the path to it defined (as previously described at [prerequisites](#Prerequisites))
+4. Make sure you have the azureauth.json and its environment variable with the path to it defined (as previously described at [prerequisites](https://docs.microsoft.com/en-us/samples/azure-samples/netappfiles-python-sdk-sample/azure-netappfiles-sdk-sample-for-python/))
 5. Edit file **deleter.py** and change the variables contents as appropriate (names are self-explanatory).
 6. Run the script
     ```powershell
