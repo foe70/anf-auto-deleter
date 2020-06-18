@@ -28,7 +28,7 @@ anf_client = AzureNetAppFilesManagementClient(
 
 RG_ID='/subscriptions/{}/resourceGroups/{}'.format(subscription_id, RESOURCE_GROUP_NAME)
 
-# get anf account name
+# get anf account name list
 
 def List_ANF_account(anf_client, rg_id):
     result = anf_client.accounts.list(resource_uri_utils.get_resource_name(rg_id))
@@ -82,7 +82,6 @@ if ANF_ACCOUNT_NAME_LIST:
                                         resource_uri_utils.get_anf_volume(
                                         volume_id)
                                         ).wait()
-                        # ARM Workaround to wait the deletion complete/propagate
                             sample_utils.wait_for_no_anf_resource(anf_client, volume_id)
                             console_output('\t\tDeleted Volume: {}'.format(volume_id))
 
@@ -98,7 +97,6 @@ if ANF_ACCOUNT_NAME_LIST:
                 try:
                     anf_client.pools.delete(RESOURCE_GROUP_NAME,pool_id.split('/')[8],resource_uri_utils.get_anf_capacity_pool(pool_id)).wait()
 
-                    # ARM Workaround to wait the deletion complete/propagate
                     sample_utils.wait_for_no_anf_resource(anf_client, pool_id)
 
                     console_output(
