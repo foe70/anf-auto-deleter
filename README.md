@@ -1,11 +1,8 @@
----
-page_type: sample
-languages:
-- python
-products:
-- azure
-- azure-netapp-files
----
+# Purpose of this script
+
+Delete all of your capacity pool which you created for test puroose, in case you want to delete them all for saving money :D
+
+
 # How to run the script
 
 1. Clone it locally
