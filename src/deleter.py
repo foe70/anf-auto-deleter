@@ -19,7 +19,6 @@ void = []
 conf= configparser.ConfigParser()
 
 def readConf():
-    '''读取配置文件'''
     root_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     conf.read(root_path + '/conf/config.conf')  # 文件路径
     name = conf.get("resource_group", "name")  # 获取指定section 的option值
@@ -58,7 +57,6 @@ def List_ANF_vol_id(anf_client,resource_group_name,pool_id_list):
 def run_deleter():
     
     conf= configparser.ConfigParser()
-    
     RESOURCE_GROUP_NAME = readConf()
     
     # get client and credential
@@ -67,18 +65,10 @@ def run_deleter():
     anf_client = AzureNetAppFilesManagementClient(
         credentials, subscription_id)
 
-
     RG_ID='/subscriptions/{}/resourceGroups/{}'.format(subscription_id, RESOURCE_GROUP_NAME)
-
-    
     ANF_ACCOUNT_NAME_LIST = List_ANF_account(anf_client,RG_ID)
-    # console_output(ANF_ACCOUNT_NAME_LIST)
-
     POOL_ID_LIST = List_ANF_pool_id(anf_client,RESOURCE_GROUP_NAME,ANF_ACCOUNT_NAME_LIST)
-    # console_output(POOL_ID_LIST)
-
     VOL_ID_LIST = List_ANF_vol_id(anf_client,RESOURCE_GROUP_NAME,POOL_ID_LIST)
-    # console_output(VOL_ID_LIST)
 
     if ANF_ACCOUNT_NAME_LIST:
         if POOL_ID_LIST:
