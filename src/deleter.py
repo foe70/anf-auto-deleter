@@ -12,7 +12,6 @@ from msrestazure.azure_exceptions import CloudError
 from sample_utils import console_output, print_header, resource_exists
 import configparser
 
-RESOURCE_GROUP_NAME = 'ANF-RG'
 acname = []
 poid = []
 void = []
